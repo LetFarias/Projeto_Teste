@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner Bizu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Planner Bizu</h1>
+        <div class="tabs">
+            <button class="tab-btn active" onclick="mostrarAba('compromissos')">Compromissos</button>
+            <button class="tab-btn" onclick="mostrarAba('contas')">Contas</button>
+        </div>
+        
+        <div id="compromissos" class="tab-content active">
+            <form id="eventoForm">
+            <input type="text" id="titulo" placeholder="Título do compromisso" required>
+            <input type="datetime-local" id="dataHora" required>
+            <button type="submit">Adicionar evento</button>
+        </form>
+
+        <ul id="listaEventos"></ul>
+        </div>
+        
+        <div id="contas" class="tab-content">
+            <form id="contaForm">
+                <input type="text" id="nomeConta" placeholder="Nome da conta" required>
+                <input type="number" id="valorConta" placeholder="Valor" required>
+                <input type="date" id="vencimentoConta" required>
+                <select id="categoriaConta" required>
+                    <option value="">Selecione uma categoria</option>
+                    <option value="Infraestrutura">Infraestrutura</option>
+                    <option value="Material">Material</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Pagamentos">Pagamentos</option>
+                    <option value="Outros">Outros</option>
+                </select>
+                <button type="submit">Adicionar conta</button>
+            </form>
+            <div id="gastosPorCategoria"></div>
+            <div id="gastoMensal">Total previsto: R$ 0.00</div>
+            <ul id="listaContas"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
